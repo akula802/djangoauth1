@@ -1,0 +1,17 @@
+{% extends 'auth/base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+<h2>This is the homepage</h2>
+<br />
+
+<!-- Display profile data if user is logged in -->
+{% if request.user.is_authenticated %}
+    <p>First Name: {{ user.first_name }}</p>
+    <p>Last Name: {{ user.last_name }}</p>
+    <p>Username: {{ user.username }}</p>
+    <p>Email: {{ user.email }}</p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'auth/base.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+
+<!-- a little message -->
+<br />
+<h2 class="text-center">Login and be cool with us.</h2>
+<br />
+
+<!-- User action: Login -->
+<div class="col-md-6 offset-md-3" name="loginForm-div">
+    <form method="POST">
+        {% csrf_token %}
+      <div class="form-group">
+        <input type="text" class="form-control" name="username" ç required>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" name="password" placeholder="Secret password" required>
+      </div>
+      <!-- Don't need this check just yet, checking the box does nothing -->
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1"><small><i>I am not a h4ck3r</i></small></label>
+      </div>
+      <button type="submit" class="btn btn-info">Login</button>
+    </form>
+    </div> <!-- end loginForm-div -->
+
+
+{% endblock %}
