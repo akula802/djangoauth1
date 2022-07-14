@@ -28,6 +28,7 @@ class SignUpForm(UserCreationForm):
 
         # Again, all this nonsense is because we didn't just build a form like the login screen
         # This is customizing the built-in django stuff: obnoxious
+        # BUT, this give us access to built-in form validators, etc so it can be worth it
         self.fields['username'].widget.attrs['class'] = 'form-control'
         self.fields['username'].widget.attrs['placeholder'] = 'Make up a cool username.'
         self.fields['username'].help_text = '<small class="form-text text-muted"><i>Username must contain letters, digits, and " @ . + - _ " only.</i></small>'
